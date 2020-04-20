@@ -13,6 +13,8 @@ static SwigV8ReturnValue $jswrapper(const SwigV8Arguments &args) {
   
   v8::Handle<v8::Object> self = args.Holder();
   $jslocals
+  
+  if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor $jswrapper. You may need to call with key word 'new'.");
   if(args.Length() != $jsargcount) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for $jswrapper.");
   $jscode
 
@@ -80,6 +82,8 @@ static SwigV8ReturnValue $jswrapper(const SwigV8Arguments &args, V8ErrorHandler 
   
   v8::Handle<v8::Object> self = args.Holder();
   $jslocals
+  
+  if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor $jswrapper. You may need to call with key word 'new'.");
   if(args.Length() != $jsargcount) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for $jswrapper.");
   $jscode
 
